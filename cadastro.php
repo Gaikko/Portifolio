@@ -19,7 +19,7 @@ $conexao = new conexao();
             <li id="limenu"><a id="aidmenu" href="./index.html">Home</a></li>
             <li id="limenu"><a id="aidmenu" href="#">Objetivo</a></li>
             <li id="limenu"><a id="aidmenu" href="#">Projetos</a></li>
-            <li id="limenu"><a id="aidmenu" href="#">Contato</a></li>
+            <li id="limenu"><a id="aidmenu" href="contato.html">Contato</a></li>
             <li id="limenu"><a id="aidmenu" href="./login.php">Login</a></li>
         </ul>
     </nav>
@@ -30,6 +30,8 @@ $conexao = new conexao();
         <label for="password" id="lblpassword">Senha: </label>
         <input type="password" name="password" id="itpassword">
         <input type="submit" value="Cadastrar" id="btncad">
+        <input type="reset" value="Limpar" id="btnreset">
+        <a href="index.html" id="alinkfooter">Voltar Início</a>
     </form>
 
     <?php
@@ -39,15 +41,15 @@ $conexao = new conexao();
         $senha = addslashes($_POST['password']);
         //verificar se está preeenchido
 
-        if(!empty($nome) && !empty($senha))
+        if(!empty($login) && !empty($senha))
         {
             $conexao->conectar();
             if($conexao->msgErro == "") //tudo ok
             {
-              echo "Conexao OK!";
+              echo "Conexao dentro cadastro.php OK!";
                 if($senha != null)
                 {
-                    if($conexao->cadastrar($nome, $senha))
+                    if($conexao->cadastrar($login, $senha))
                     {
                         ?>
                         <div id="msg-erro">

@@ -1,7 +1,6 @@
 <?php
 require_once "conexao.php";
 $conexao = new conexao();
-$conexao->conectar();
 
 ?>
 
@@ -21,18 +20,66 @@ $conexao->conectar();
             <li id="limenu"><a id="aidmenu" href="./index.html">Home</a></li>
             <li id="limenu"><a id="aidmenu" href="#">Objetivo</a></li>
             <li id="limenu"><a id="aidmenu" href="#">Projetos</a></li>
-            <li id="limenu"><a id="aidmenu" href="#">Contato</a></li>
+            <li id="limenu"><a id="aidmenu" href="contato.html">Contato</a></li>
             <li id="limenu"><a id="aidmenu" href="#">Login</a></li>
         </ul>
     </nav>
-    <form method="post" action="cadastro.php" class="frmcad">
+    <form method="post" class="frmcad">
         <label for="frmcad">Logar-se</label>
         <label for="login" id="lbllogin">Login: </label>
         <input type="text" name="login" id="itlogin">
         <label for="password" id="lblpassword">Senha: </label>
         <input type="password" name="password" id="itpassword">
         <input type="submit" value="Logar-se" id="btncad">
+        <input type="reset" value="Limpar" id="btnreset">
+        <a href="cadastro.php" id="alinkfooter">Cadastrar-se</a>
     </form>
+
+    <?php
+    if(isset($_POST['login']))
+    {
+        $login = addslashes($_POST['login']);
+        $senha = addslashes($_POST['password']);
+
+        if(!empty($login) && !empty($senha))
+        {
+            $conexao->conectar();
+            if($conexao->msgErro =="")
+            {
+                if($conexao->logar($login, $senha))
+                {
+                    header("location: area_privada.php");
+                }
+                else
+                {
+                    ?>
+                    <div id="msg-erro">
+                        Email e/ou senha não confere.
+                    </div>
+                    <?php
+                }
+            }
+            else
+            {
+                ?>
+                <div id="msg-erro">
+                    <?php echo "Erro: " .$conexao->msgErro; ?>
+                </div>
+                <?php
+            }
+        }
+        else
+        {
+            ?>
+                <div id="msg-erro">
+                    Preencha todos os campos!
+                </div>
+            <?php
+        }
+    }
+
+    ?>
+    
     <h6 id="h6js"></h6>
     <script src="JS/script.js"></script>
 </body>

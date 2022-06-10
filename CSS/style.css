@@ -60,7 +60,8 @@
 #lblpassword,
 #itlogin,
 #itpassword,
-#btncad {
+#btncad,
+#btnreset {
     text-align: center;
     border-radius: 15px;
     border-style: none;
@@ -83,4 +84,45 @@ input:hover {
 
 #msg-erro {
     text-align: center;
+    font-style: oblique;
+}
+
+#alinkfooter {
+    margin: 10px;
+    text-decoration: none;
+    border-style: groove;
+    border-radius: 15px;
+}
+
+#devimg {
+    width: 25%;
+    height: 25%;
+    padding: 10px;
+}
+
+.dev {
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.ctt {
+    border-style: ridge;
+    position: relative;
+    left: auto;
+    right: auto;
+}
+
+.frmctt {
+    margin: 5px;
+    padding: 15px;
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
 }
