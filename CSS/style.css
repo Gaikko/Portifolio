@@ -1,0 +1,86 @@
+.corpo {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: aliceblue;
+}
+
+#navmenu {
+    display: block;
+}
+
+#ulmenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+
+#limenu {
+    text-align: center;
+    list-style: none;
+}
+
+#aidmenu {
+    position: relative;
+    text-decoration: none;
+}
+
+#imglogo {
+    width: 25px;
+    height: 21px;
+    display: block;
+}
+
+#imgcentro {
+    width: 75%;
+}
+
+.seccentro {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+    align-items: center;
+}
+
+.frmcad {
+    background-color: azure;
+    width: -webkit-fill-available;
+    display: inline-grid;
+    text-align: center;
+    border-style: outset;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    justify-items: stretch;
+}
+
+#lbllogin,
+#lblpassword,
+#itlogin,
+#itpassword,
+#btncad {
+    text-align: center;
+    border-radius: 15px;
+    border-style: none;
+    padding: 10px;
+    margin: 20px;
+}
+
+input {
+    background-color: #b6e580;
+}
+
+input:hover {
+    background-color: #3e6ead;
+}
+
+#h6js {
+    text-align: center;
+    bottom: 0rem;
+}
+
+#msg-erro {
+    text-align: center;
+}
